@@ -1,0 +1,31 @@
+{
+  "name": "food-ordering-app",
+  "version": "1.0.0",
+  "description": "This is food ordering app by isha",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishaagrawa/food-ordering-app.git"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react"
+  ],
+  "author": "Isha Agrawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishaagrawa/food-ordering-app/issues"
+  },
+  "homepage": "https://github.com/ishaagrawa/food-ordering-app#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
