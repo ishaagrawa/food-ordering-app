@@ -1,0 +1,37 @@
+/* Header styles */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202a36;
+  padding: 1rem 2rem;
+}
+
+.header-logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.header-logo img {
+    height: 100px;
+    text-decoration: none;
+    }
+
+.header-menu {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.header-link:hover {
+  color: #ff9800;
+}
