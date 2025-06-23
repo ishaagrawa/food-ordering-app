@@ -4,7 +4,8 @@
   "description": "This is food ordering app by isha",
   "scripts": {
     "start": "parcel src/index.html",
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,10 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "targets": {
+    "default": {
+      "distDir": "./dist"
+    }
   }
 }
