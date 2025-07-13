@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
-import Header from './Header'
-// import CardComponent from './CardComponent';
 import data from '../assest/data.js'
 import '../../src/Components/styles/Body.css';
 import { CardComponent } from './CardComponent.js';
+// import { FOOD_ORDERING_API_URL } from '../ApiUrl';
+import axios from 'axios';
 
-const myResData = 
-data && data.restaurants 
-?
+
+// axios.get(FOOD_ORDERING_API_URL)
+//   .then((res) => {
+//     console.log(res.data);
+//   })
+//   .catch((err)=>{
+//     console.log("fetch  error", err);
+    
+// })
+let myResData = 
+
  data.restaurants.map((item) => ({
     id: item.info.id,
     name: item.info.name,
@@ -19,14 +27,28 @@ data && data.restaurants
     address: item.info.locality,
     area: item.info.areaName,
 })) 
-: [];
 
 const Body = () => {
+    const [filteredData, setFilteredData] = useState(myResData);
+    const [searchTerm, setSearchTerm] = useState('');
+    const searchFilter = () =>{
+        console.log("searchFilter called");
+        const filtered = myResData.filter((res) =>
+        res.name.toLowerCase().includes(searchTerm.toLowerCase()))
+        setFilteredData(filtered);
+    }
     return(
         <>
-            <Header/>
+        <input value = {searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+        <button onClick={() => searchFilter()}>Search</button>
+        <button className='filter-btn' onClick={()=>
+            {
+                myResData = myResData.filter((res) => res.rating > 4.0)
+                setFilteredData(myResData);
+            }            
+        }>Filter button 4+ rating</button>
             <div className="body">
-                {myResData.map((restaurant) => (
+                {filteredData.map((restaurant) => (
                     <CardComponent key={restaurant.id} data={restaurant} />
                 ))}
             </div>

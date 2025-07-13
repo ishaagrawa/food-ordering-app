@@ -1,11 +1,11 @@
-import React from "react";
 import Body from "./Components/Body";
+import Header from '../src/Components/Header'
 
 const App = () => {
   return (
     <div>
-      {/* <h1>Hello Isha! Your React app 🧁</h1> */}
-    <Body/>
+      <Header/>
+      <Body />
     </div>
   );
 };
